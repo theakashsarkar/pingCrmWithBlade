@@ -14,8 +14,12 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-bgColor">
             @include('layouts.navigation')
+
+            @include('layouts.layoutsNavigation')
+
+{{--            @include('layouts.formLayouts')--}}
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -30,6 +34,7 @@
             <main>
                 {{ $slot }}
             </main>
+{{--            @include('layouts.pagination')--}}
         </div>
     </body>
 </html>

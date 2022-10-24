@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +19,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('home');
+
+Route::get('/organization', [\App\Http\Controllers\OrganizationsController::class, 'index'])->name('organizations');
+
+Route::get('/organization/create', [\App\Http\Controllers\OrganizationsController::class, 'index'])->name('create');
+Route::POST('/organization/store', [\App\Http\Controllers\OrganizationsController::class, 'addCustomer'])->name('organization/store');
+
 
 require __DIR__.'/auth.php';
