@@ -98,6 +98,7 @@
                 <th>Name</th>
                 <th>City</th>
                 <th>Phone</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -107,6 +108,9 @@
                 <td class="border-t border-indigo-500 ">{{ $organization->name }}</td>
                 <td class="border-t border-indigo-500 ">{{ $organization->city }}</td>
                 <td class="border-t border-indigo-500 ">{{ $organization->phone }}</td>
+                <td class="border-t border-indigo-500 ">
+                    <a href="{{ "organization/edit/". $organization->id }}">Edit</a>
+                </td>
             </tr>
             @endforeach
 

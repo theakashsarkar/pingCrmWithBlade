@@ -28,6 +28,8 @@ Route::get('/organization', [\App\Http\Controllers\OrganizationsController::clas
 
 Route::get('/organization/create', [\App\Http\Controllers\OrganizationsController::class, 'index'])->middleware(['auth', 'verified'])->name('create');
 Route::POST('/organization/store', [\App\Http\Controllers\OrganizationsController::class, 'addCustomer'])->middleware(['auth', 'verified'])->name('organization/store');
+Route::get('/organization/edit/{id}', [\App\Http\Controllers\OrganizationsController::class, 'editData']);
+Route::post('edit',[\App\Http\Controllers\OrganizationsController::class, 'update'])->name('update');
 
 
 require __DIR__.'/auth.php';
