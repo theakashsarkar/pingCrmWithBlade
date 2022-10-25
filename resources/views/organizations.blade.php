@@ -96,19 +96,19 @@
             <tr class="hover:bg-gray-100 focus-within:bg-gray-100">
                 <th></th>
                 <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
+                <th>City</th>
+                <th>Phone</th>
             </tr>
             </thead>
             <tbody>
-
-            <!-- row 2 -->
+            @foreach($organizations as $organization)
             <tr class="hover">
-                <th class="border-t border-indigo-500 ">2</th>
-                <td class="border-t border-indigo-500 ">Hart Hagerty</td>
-                <td class="border-t border-indigo-500 ">Desktop Support Technician</td>
-                <td class="border-t border-indigo-500 ">Purple</td>
+                <th class="border-t border-indigo-500 ">{{ $organization->id }}</th>
+                <td class="border-t border-indigo-500 ">{{ $organization->name }}</td>
+                <td class="border-t border-indigo-500 ">{{ $organization->city }}</td>
+                <td class="border-t border-indigo-500 ">{{ $organization->phone }}</td>
             </tr>
+            @endforeach
 
             </tbody>
         </table>

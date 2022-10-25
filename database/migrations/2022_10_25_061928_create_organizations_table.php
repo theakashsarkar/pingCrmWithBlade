@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('organization', function (Blueprint $table) {
+        Schema::create('organizations', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
             $table->string('email');
             $table->integer('phone');
-            $table->string('address');
+            $table->text('address');
             $table->string('city');
             $table->string('state');
             $table->string('country');
-            $table->integer('postalCode');
+            $table->string('postalCode');
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('organization');
+        Schema::dropIfExists('organizations');
     }
 };
